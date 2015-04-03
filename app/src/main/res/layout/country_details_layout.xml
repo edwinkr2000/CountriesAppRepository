@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CountryDetailsActivity">
+
+
+
+     <ImageView
+
+
+         android:layout_width="300dp"
+         android:layout_height="140dp"
+         android:id="@+id/country_iv"
+         android:layout_gravity="center_horizontal"
+         android:paddingLeft="35dp"
+         android:paddingRight="35dp"
+
+         />
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        card_view:cardCornerRadius="5dp"
+        android:layout_weight="1"
+        android:layout_margin="5dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView"
+
+
+
+            android:layout_margin="10dp">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    >
+                    <TextView
+                        android:id="@+id/country_label_tv"
+                        android:text="@string/country_label_tv"
+                        style="@style/LabelStyle" />
+
+                    <TextView
+                        style="@style/DetailStyle"
+                        android:text="@string/country_name_tv"
+                        android:id="@+id/country_tv"
+                        android:layout_above="@+id/formal_name_tv"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:inputType="textMultiLine"
+                        />
+
+
+
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp">
+                    <TextView
+                        style="@style/LabelStyle"
+                        android:id="@+id/formal_name_label_tv"
+                        android:text="@string/formal_name_label_tv"
+                        />
+                    <TextView
+                        style="@style/DetailStyle"
+                        android:text="@string/country_name_tv"
+                        android:id="@+id/formal_name_tv"
+                        android:layout_weight="1"
+                         />
+
+
+                </TableRow>
+
+
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="1.0dp"
+                    android:layout_weight="0"
+                    layout="@layout/separator" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="0dp">
+                    <TextView
+                        android:id="@+id/capital_label_tv"
+                        style="@style/LabelStyle"
+                        android:text="@string/capital_label_tv"
+
+                        />
+
+                    <TextView
+                        style="@style/DetailStyle"
+                        android:text="//null//"
+                        android:id="@+id/capital_tv"
+                        />
+
+                    </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="0dp">
+                    <TextView
+                        android:id="@+id/currency_label_tv"
+                        style="@style/LabelStyle"
+                        android:text="@string/currency_label_tv"
+                        android:textStyle="bold"
+                        android:layout_below="@id/capital_label_tv"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        style="@style/DetailStyle"
+                        android:text="//null//"
+                        android:id="@+id/currency_tv"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignLeft="@+id/capital_tv"
+                        android:layout_alignStart="@+id/capital_tv" />
+                </TableRow>
+
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="1.0dp"
+                    android:layout_weight="0"
+                    layout="@layout/separator" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp">
+                    <TextView
+                        android:id="@+id/type_label_tv"
+                        android:text="@string/type_label_tv"
+                        style="@style/LabelStyle"
+                         />
+
+                    <TextView
+                        android:text="//null//"
+                        android:id="@+id/type_tv"
+                        style="@style/DetailStyle"
+                         />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp">
+                    <TextView
+                        android:id="@+id/tel_code_label_tv"
+                        android:text="@string/tel_code_label_tv"
+                        style="@style/LabelStyle"
+                        />
+
+                    <TextView
+                        android:text="//null//"
+                        android:id="@+id/tel_code_tv"
+                        style="@style/DetailStyle"
+                        />
+                </TableRow>
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="1.0dp"
+                    android:layout_weight="0"
+                    layout="@layout/separator" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:divider="@color/azure"
+                    android:layout_marginLeft="5dp">
+                    <TextView
+                        android:id="@+id/letter_code_label_tv"
+                        style="@style/LabelStyle"
+                        android:text="@string/letter_code_label_tv"/>
+
+                    <TextView
+                        style="@style/DetailStyle"
+                        android:text="//null//"
+                        android:id="@+id/letter_code_tv"
+                        android:textSize="18sp"
+                        />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:divider="@color/azure"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp">
+                    <TextView
+                        android:id="@+id/internet_code_label_tv"
+                        style="@style/LabelStyle"
+                        android:text="@string/internet_code_label_tv"/>
+
+                    <TextView
+                        style="@style/DetailStyle"
+                        android:text="//null//"
+                        android:id="@+id/internet_code_tv"
+                        android:textSize="18sp"
+                        />
+                </TableRow>
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="1.0dp"
+                    android:layout_weight="0"
+                    layout="@layout/separator" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:divider="@color/azure"
+                    android:layout_margin="5dp"
+                    >
+                    <TextView
+                        android:id="@+id/wiki_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/wiki"
+                        android:textColor="#000FFF"
+                        android:gravity="center_horizontal"
+                        android:layout_marginBottom="5dp"
+                        android:layout_span="2"
+                        />
+                    </TableRow>
+
+
+
+            </TableLayout>
+
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
