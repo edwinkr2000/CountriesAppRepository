@@ -23,6 +23,7 @@
         <activity android:name="com.netspacekenya.leftie.countries.CountryDetailsActivity"
             android:parentActivityName="com.netspacekenya.leftie.countries.MainActivity">
         </activity>
+        <activity android:name="com.netspacekenya.leftie.countries.RecyclerActivity"/>
     </application>
 
 </manifest>

@@ -78,8 +78,6 @@ public class MainActivity extends ActionBarActivity implements CountrySelectedLi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
-
-
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -99,6 +97,9 @@ public class MainActivity extends ActionBarActivity implements CountrySelectedLi
         }
         else if(drawerToggle.onOptionsItemSelected(item)){
             return true;
+        }
+        else if(id==R.id.action_search){
+
         }
 
         return super.onOptionsItemSelected(item);
