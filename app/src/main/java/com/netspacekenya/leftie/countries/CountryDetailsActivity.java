@@ -33,7 +33,22 @@ public class CountryDetailsActivity extends ActionBarActivity {
             pager.setAdapter(new CountrySelectedStateAdapter(this));
 
         if(savedInstanceState==null) {
-            pager.setCurrentItem(getIntent().getIntExtra("position", 0));
+            if( getIntent().getExtras().get("position")==null){
+                String position = getIntent().getStringExtra("country name");
+                int counter = 0;
+                for(String x : MainActivity.list){
+                    if(position.equals(x)){
+                        pager.setCurrentItem(counter);
+                        break;
+                    }
+                    else{
+                        counter++;
+                    }
+                }
+
+            }else {
+                pager.setCurrentItem(getIntent().getIntExtra("position", 0));
+            }
 
 
         }

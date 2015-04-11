@@ -6,7 +6,7 @@
 
             <ImageView android:layout_height="160dp"
                 android:layout_margin="5dp"
-                android:layout_width="240dp"
+                android:layout_width="220dp"
                 android:id="@id/country_iv"
                 android:layout_span="2"
                 android:elevation="5dp"
@@ -16,7 +16,7 @@
 
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:paddingRight="20dp"
         android:layout_weight="1"
         android:layout_marginTop="10dp"
@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="0dp">
             <TextView
                 android:id="@+id/country_label_tv"
                 android:text="@string/country_label_tv"
@@ -71,25 +71,18 @@
                 android:id="@+id/formal_name_tv"
                 android:layout_weight="1"
                 android:inputType="textMultiLine"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
         </TableRow>
 
 
-        <include
-            android:layout_width="match_parent"
-            android:layout_height="1.0dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="0"
-            layout="@layout/separator" />
-
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="0dp">
             <TextView
                 android:id="@+id/capital_label_tv"
                 style="@style/LabelStyle"
@@ -103,14 +96,22 @@
                 android:inputType="textMultiLine"
                 android:id="@+id/capital_tv"
                 android:layout_weight="0"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </TableRow>
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="1.0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="0"
+            layout="@layout/separator" />
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="0dp">
             <TextView
                 android:id="@+id/currency_label_tv"
                 style="@style/LabelStyle"
@@ -129,13 +130,7 @@
                 android:layout_alignStart="@+id/capital_tv" />
         </TableRow>
 
-        <include
-            android:layout_width="wrap_content"
-            android:layout_height="1.0dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="0"
-            layout="@layout/separator" />
+
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -157,7 +152,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="0dp">
             <TextView
                 android:id="@+id/tel_code_label_tv"
                 android:text="@string/tel_code_label_tv"
@@ -183,7 +178,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:divider="@color/azure"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="0dp">
             <TextView
                 android:id="@+id/letter_code_label_tv"
                 style="@style/LabelStyle"
@@ -214,11 +209,7 @@
                 android:textSize="18sp"
                 />
         </TableRow>
-        <include
-            android:layout_width="match_parent"
-            android:layout_height="1.0dp"
-            android:layout_weight="0"
-            layout="@layout/separator" />
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -230,11 +221,13 @@
                 android:id="@id/wiki_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/wiki"
                 android:textColor="#000FFF"
                 android:gravity="center_horizontal"
-                android:layout_span="2"/>
+                android:layout_span="2"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1" />
         </TableRow>
 
     </TableLayout>

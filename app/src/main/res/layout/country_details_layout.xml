@@ -17,7 +17,6 @@
          android:layout_gravity="center_horizontal"
          android:paddingLeft="35dp"
          android:paddingRight="35dp"
-
          />
 
     <android.support.v7.widget.CardView
@@ -33,14 +32,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/scrollView"
-
-
-
             android:layout_margin="10dp">
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
+                android:stretchColumns="true"
                 >
                 <TableRow
                     android:layout_width="match_parent"
@@ -72,7 +69,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="5dp">
+                    android:layout_marginBottom="0dp">
                     <TextView
                         style="@style/LabelStyle"
                         android:id="@+id/formal_name_label_tv"
@@ -83,17 +80,11 @@
                         android:text="@string/country_name_tv"
                         android:id="@+id/formal_name_tv"
                         android:layout_weight="1"
-                         />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
 
                 </TableRow>
-
-
-                <include
-                    android:layout_width="wrap_content"
-                    android:layout_height="1.0dp"
-                    android:layout_weight="0"
-                    layout="@layout/separator" />
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -112,9 +103,15 @@
                         style="@style/DetailStyle"
                         android:text="//null//"
                         android:id="@+id/capital_tv"
-                        />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                     </TableRow>
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="1.0dp"
+                    android:layout_weight="0"
+                    layout="@layout/separator" />
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -139,11 +136,7 @@
                         android:layout_alignStart="@+id/capital_tv" />
                 </TableRow>
 
-                <include
-                    android:layout_width="wrap_content"
-                    android:layout_height="1.0dp"
-                    android:layout_weight="0"
-                    layout="@layout/separator" />
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -221,18 +214,12 @@
                         android:textSize="18sp"
                         />
                 </TableRow>
-                <include
-                    android:layout_width="wrap_content"
-                    android:layout_height="1.0dp"
-                    android:layout_weight="0"
-                    layout="@layout/separator" />
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:divider="@color/azure"
-                    android:layout_margin="5dp"
-                    >
+                    android:layout_weight="0"
+                    android:layout_margin="0dp">
                     <TextView
                         android:id="@+id/wiki_tv"
                         android:layout_width="match_parent"
@@ -242,7 +229,9 @@
                         android:gravity="center_horizontal"
                         android:layout_marginBottom="5dp"
                         android:layout_span="2"
-                        />
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:inputType="none" />
                     </TableRow>
 
 

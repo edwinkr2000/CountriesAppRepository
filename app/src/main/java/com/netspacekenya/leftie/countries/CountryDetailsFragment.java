@@ -80,6 +80,7 @@ public class CountryDetailsFragment extends android.support.v4.app.Fragment {
             String x = c.getTldCode().substring(1);
             im = (ImageView) rootView.findViewById(R.id.country_iv);
             im.setImageResource(getResources().getIdentifier("test.leftie.com.countries:drawable/" + x, null, null));
+            
         } catch (Exception ex) {
             ///ignore
 

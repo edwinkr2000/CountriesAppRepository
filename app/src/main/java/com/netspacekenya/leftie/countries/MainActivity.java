@@ -3,7 +3,6 @@ package com.netspacekenya.leftie.countries;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v4.app.FragmentManager;
@@ -29,7 +28,7 @@ import test.leftie.com.countries.R;
  * Created by Edwin Muigai on 16-Mar-15.
  *
  */
-public class MainActivity extends ActionBarActivity implements CountrySelectedListener, CapitalSelectedListener, CodeSelectedListener {
+public class MainActivity extends ActionBarActivity implements  CapitalSelectedListener, CodeSelectedListener {
     ArrayList<Country> countryList;
     DrawerLayout drawer;
     ListView drawer_lv;
@@ -47,7 +46,6 @@ public class MainActivity extends ActionBarActivity implements CountrySelectedLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
 
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(R.color.azure));
         cr = new CountriesReader(this);
         countryList = cr.getCountryList();
         cList = countryList.toArray(new Country[countryList.size()]);
@@ -59,9 +57,11 @@ public class MainActivity extends ActionBarActivity implements CountrySelectedLi
       }
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer_lv = (ListView) findViewById(R.id.left_drawer);
-        drawer_lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-        drawer_lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, drawerList));
+        drawer_lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_activated_1, drawerList));
         drawer_lv.setOnItemClickListener(new DrawerClickListener(getSupportFragmentManager()));
+        drawer_lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        drawer_lv.setDivider(getResources().getDrawable(android.R.drawable.divider_horizontal_bright));
+        drawer_lv.setDividerHeight(3);
 
         drawerToggle = new ActionBarDrawerToggle(this, drawer, R.string.open_drawer, R.string.close_drawer);
         drawer.setDrawerListener(drawerToggle);
@@ -71,7 +71,9 @@ public class MainActivity extends ActionBarActivity implements CountrySelectedLi
 
 
         if(savedInstanceState==null){
+
             getSupportFragmentManager().beginTransaction().add(R.id.main_container, new CountriesFragment()).commit();
+            drawer_lv.setSelection(0);
         }
     }
 
@@ -98,9 +100,7 @@ public class MainActivity extends ActionBarActivity implements CountrySelectedLi
         else if(drawerToggle.onOptionsItemSelected(item)){
             return true;
         }
-        else if(id==R.id.action_search){
 
-        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -112,11 +112,6 @@ public class MainActivity extends ActionBarActivity implements CountrySelectedLi
     }
 
 
-    public void onCountrySelected(int position) {
-        Intent intent = new Intent(this, CountryDetailsActivity.class);
-        intent.putExtra("position", position);
-        startActivity(intent);
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -124,7 +119,12 @@ public class MainActivity extends ActionBarActivity implements CountrySelectedLi
              voiceList = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
            String word = voiceList.get(0);
             int position = lookForVoiceWord(word);
-            if(position!=-1) onCountrySelected(position);
+            if(position!=-1) {
+                Intent intent = new Intent(this, CountryDetailsActivity.class);
+                intent.putExtra("position", position);
+                startActivity(intent);
+
+            }
             else Toast.makeText(this, "You said \""+word +"\", try again", Toast.LENGTH_SHORT).show();
 
 
@@ -208,6 +208,7 @@ public class MainActivity extends ActionBarActivity implements CountrySelectedLi
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             drawer_lv.setItemChecked(position, true);
+
             switch (position){
                 case 0 : fragMag.beginTransaction().replace(R.id.main_container, new CountriesFragment()).commit();
                     drawer.closeDrawers();
@@ -222,6 +223,9 @@ public class MainActivity extends ActionBarActivity implements CountrySelectedLi
                     getSupportActionBar().setTitle("Tel Codes");
                     break;
                 case 3 :
+                    drawer.closeDrawers();
+                    Intent aboutIntent = new Intent(MainActivity.this, AboutActivity.class);
+                    startActivity(aboutIntent);
                     break;
 
             }

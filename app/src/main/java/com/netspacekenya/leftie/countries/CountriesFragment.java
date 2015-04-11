@@ -1,39 +1,38 @@
 package com.netspacekenya.leftie.countries;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.FrameLayout;
 
 import test.leftie.com.countries.R;
 
 /**
- * Created by Edwin on 29-Mar-15.
+ * Created by Edwin on 05-Apr-15.
  */
-public class CountriesFragment extends ListFragment {
-    CountrySelectedListener listener;
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.list_layout, container, false);
-//        setListAdapter(new CountriesAdapter(getActivity(),android.R.layout.simple_list_item_1));
-        setListAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, MainActivity.list));
+public class CountriesFragment extends Fragment {
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    RecyclerView.Adapter adapter;
+    FrameLayout frame;
 
+    @Override
+    public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.main_layout, container, false);
+
+        recyclerView = new RecyclerView(getActivity());
+        layoutManager = new LinearLayoutManager(getActivity());
+        adapter = new RecyclerAdapter(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setHasFixedSize(true);
+        frame = (FrameLayout) rootView.findViewById(R.id.main_container);
+        frame.addView(recyclerView);
         return rootView;
     }
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        this.listener = (CountrySelectedListener) activity;
-    }
-
-    @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
-        listener.onCountrySelected(position);
-    }
 }
