@@ -9,6 +9,7 @@
         android:id="@+id/main_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         />
     <!-- The navigation drawer -->
     <ListView android:id="@+id/left_drawer"
@@ -18,5 +19,6 @@
         android:choiceMode="singleChoice"
         android:divider="@android:drawable/divider_horizontal_dim_dark"
         android:dividerHeight="1dp"
-        android:background="@color/eggshell"/>
+        android:background="@color/eggshell"
+        />
 </android.support.v4.widget.DrawerLayout>

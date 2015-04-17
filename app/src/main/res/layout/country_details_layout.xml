@@ -27,12 +27,16 @@
         android:layout_height="0dp"
         card_view:cardCornerRadius="5dp"
         android:layout_weight="1"
-        android:layout_margin="5dp">
+
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="15dp">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/scrollView"
-            android:layout_margin="10dp">
+            android:padding="10dp">
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -104,7 +108,8 @@
                         android:text="//null//"
                         android:id="@+id/capital_tv"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"/>
 
                     </TableRow>
                 <include
@@ -231,7 +236,8 @@
                         android:layout_span="2"
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
-                        android:inputType="none" />
+                        android:inputType="none"
+                        android:background="?android:attr/selectableItemBackground"/>
                     </TableRow>
 
 

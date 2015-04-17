@@ -12,7 +12,7 @@
     android:layout_height="wrap_content"
     android:padding="5dp"
     android:layout_margin="5dp"
-    android:background="@drawable/recycler_highlighter">
+    android:background="?android:attr/selectableItemBackground">
 
     <view
         android:layout_width="70dp"

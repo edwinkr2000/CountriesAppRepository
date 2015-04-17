@@ -99,8 +99,15 @@ public class CountryDetailsActivity extends ActionBarActivity {
                 colorPointer++;
                 break;
             case 3 : titleStrip.setBackgroundColor(getResources().getColor(R.color.baker_miller));
+                colorPointer++;
+                break;
+            case 4: titleStrip.setBackgroundColor(getResources().getColor(R.color.red));
+                colorPointer++;
+                break;
+            case 5: titleStrip.setBackgroundColor(getResources().getColor(R.color.aero));
                 colorPointer=0;
                 break;
+
 
 
         }

@@ -4,8 +4,10 @@
     <color name="black_overlay">#66000000</color>
     <color name="atomic_tangerine">#FF9966</color>
     <color name="azure">#007FFF</color>
+    <color name="light_purple">#AA66CC</color>
     <color name="baker_miller">#FF91AF</color>
     <color name="bright_green">#66FF00</color>
     <color name="eggshell">#F0EAD6</color>
+    <color name="red">#CC0000</color>
 
 </resources>
