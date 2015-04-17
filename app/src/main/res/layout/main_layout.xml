@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
     <!-- The main content view -->
     <FrameLayout
         android:id="@+id/main_container"
@@ -33,7 +34,7 @@
         android:choiceMode="singleChoice"
         android:divider="@android:drawable/divider_horizontal_dim_dark"
         android:dividerHeight="1dp"
-        android:background="@color/eggshell"
+        android:background="@drawable/background3"
         android:layout_below="@id/drawer_iv"
         android:layout_alignParentLeft="true"
         />
