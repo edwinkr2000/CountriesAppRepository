@@ -25,11 +25,12 @@ public class CountriesFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.main_layout, container, false);
 
         recyclerView = new RecyclerView(getActivity());
+        recyclerView.setVerticalScrollBarEnabled(true);
         layoutManager = new LinearLayoutManager(getActivity());
         adapter = new RecyclerAdapter(getActivity());
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-        recyclerView.setHasFixedSize(true);
         frame = (FrameLayout) rootView.findViewById(R.id.main_container);
         frame.addView(recyclerView);
         return rootView;

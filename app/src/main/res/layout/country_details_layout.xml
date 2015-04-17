@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".CountryDetailsActivity">
+    android:background="@drawable/background1">
 
-
-
-     <ImageView
-
-
-         android:layout_width="300dp"
-         android:layout_height="140dp"
-         android:id="@+id/country_iv"
-         android:layout_gravity="center_horizontal"
-         android:paddingLeft="35dp"
-         android:paddingRight="35dp"
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="140dp"
+        android:id="@+id/country_iv"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="35dp"
+        android:paddingRight="35dp"
          />
-
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
@@ -37,65 +30,56 @@
             android:layout_height="wrap_content"
             android:id="@+id/scrollView"
             android:padding="10dp">
-            <TableLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:stretchColumns="true"
-                >
-                <TableRow
-                    android:layout_width="match_parent"
+                android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/country_label_tv"
+                    android:text="@string/country_label_tv"
+                    style="@style/LabelStyle" />
+
+                <TextView
+                    style="@style/DetailStyle"
+                    android:text="@string/country_name_tv"
+                    android:id="@+id/country_tv"
+                    android:layout_above="@+id/formal_name_tv"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_horizontal" />
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/LabelStyle"
+                    android:id="@+id/formal_name_label_tv"
+                    android:text="@string/formal_name_label_tv"
+                    />
+                <TextView
+                    style="@style/DetailStyle"
+                    android:text="@string/country_name_tv"
+                    android:id="@+id/formal_name_tv"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="5dp"
-                    >
-                    <TextView
-                        android:id="@+id/country_label_tv"
-                        android:text="@string/country_label_tv"
-                        style="@style/LabelStyle" />
+                    android:layout_gravity="center_horizontal" />
 
-                    <TextView
-                        style="@style/DetailStyle"
-                        android:text="@string/country_name_tv"
-                        android:id="@+id/country_tv"
-                        android:layout_above="@+id/formal_name_tv"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:inputType="textMultiLine"
-                        />
+                </LinearLayout>
 
-
-
-
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="0dp">
-                    <TextView
-                        style="@style/LabelStyle"
-                        android:id="@+id/formal_name_label_tv"
-                        android:text="@string/formal_name_label_tv"
-                        />
-                    <TextView
-                        style="@style/DetailStyle"
-                        android:text="@string/country_name_tv"
-                        android:id="@+id/formal_name_tv"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="0dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
                     <TextView
                         android:id="@+id/capital_label_tv"
                         style="@style/LabelStyle"
@@ -107,22 +91,21 @@
                         style="@style/DetailStyle"
                         android:text="//null//"
                         android:id="@+id/capital_tv"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:maxLines="2"/>
-
-                    </TableRow>
+                        android:maxLines="2"
+                        android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
                 <include
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="1.0dp"
                     android:layout_weight="0"
                     layout="@layout/separator" />
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="0dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
                     <TextView
                         android:id="@+id/currency_label_tv"
                         style="@style/LabelStyle"
@@ -138,32 +121,31 @@
                         android:id="@+id/currency_tv"
                         android:layout_alignParentBottom="true"
                         android:layout_alignLeft="@+id/capital_tv"
-                        android:layout_alignStart="@+id/capital_tv" />
-                </TableRow>
+                        android:layout_alignStart="@+id/capital_tv"
+                        android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
 
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="5dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
                     <TextView
                         android:id="@+id/type_label_tv"
                         android:text="@string/type_label_tv"
                         style="@style/LabelStyle"
-                         />
+                        />
 
                     <TextView
                         android:text="//null//"
                         android:id="@+id/type_tv"
                         style="@style/DetailStyle"
-                         />
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="5dp">
+                        android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
                     <TextView
                         android:id="@+id/tel_code_label_tv"
                         android:text="@string/tel_code_label_tv"
@@ -175,19 +157,17 @@
                         android:id="@+id/tel_code_tv"
                         style="@style/DetailStyle"
                         />
-                </TableRow>
+                    </LinearLayout>
                 <include
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="1.0dp"
                     android:layout_weight="0"
                     layout="@layout/separator" />
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:divider="@color/azure"
-                    android:layout_marginLeft="5dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
                     <TextView
                         android:id="@+id/letter_code_label_tv"
                         style="@style/LabelStyle"
@@ -198,15 +178,13 @@
                         android:text="//null//"
                         android:id="@+id/letter_code_tv"
                         android:textSize="18sp"
-                        />
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:divider="@color/azure"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginBottom="5dp">
+                        android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
                     <TextView
                         android:id="@+id/internet_code_label_tv"
                         style="@style/LabelStyle"
@@ -217,34 +195,26 @@
                         android:text="//null//"
                         android:id="@+id/internet_code_tv"
                         android:textSize="18sp"
-                        />
-                </TableRow>
+                        android:layout_gravity="center_horizontal" />
 
-                <TableRow
+                    </LinearLayout>
+                <TextView
+                    android:id="@+id/wiki_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:layout_margin="0dp">
-                    <TextView
-                        android:id="@+id/wiki_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/wiki"
-                        android:textColor="#000FFF"
-                        android:gravity="center_horizontal"
-                        android:layout_marginBottom="5dp"
-                        android:layout_span="2"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_weight="1"
-                        android:inputType="none"
-                        android:background="?android:attr/selectableItemBackground"/>
-                    </TableRow>
-
-
-
-            </TableLayout>
-
+                    android:text="@string/wiki"
+                    android:textColor="#000FFF"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_span="2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                    android:background="?android:attr/selectableItemBackground"/>
+            </LinearLayout>
         </ScrollView>
-    </android.support.v7.widget.CardView>
+
+        </android.support.v7.widget.CardView>
 
 </LinearLayout>

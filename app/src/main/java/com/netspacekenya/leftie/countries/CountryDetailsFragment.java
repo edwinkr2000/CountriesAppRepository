@@ -53,7 +53,7 @@ public class CountryDetailsFragment extends android.support.v4.app.Fragment {
 
 
         tel_code_tv = (TextView) rootView.findViewById(R.id.tel_code_tv);
-        if(c.getTelephoneCode().charAt(0)=='-'){
+        if(!c.getTelephoneCode().equals("") && c.getTelephoneCode().charAt(0)=='-'){
             tel_code_tv.setText("+1"+c.getTelephoneCode());
 
         }
@@ -77,7 +77,7 @@ public class CountryDetailsFragment extends android.support.v4.app.Fragment {
             }
         });
         try {
-            String x = c.getTldCode().substring(1);
+            String x = c.getLetterCode().toLowerCase();
             im = (ImageView) rootView.findViewById(R.id.country_iv);
             im.setImageResource(getResources().getIdentifier("test.leftie.com.countries:drawable/" + x, null, null));
             

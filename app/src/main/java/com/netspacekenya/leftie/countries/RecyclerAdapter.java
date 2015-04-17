@@ -40,7 +40,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyHold
     public void onBindViewHolder(RecyclerAdapter.MyHolder holder, int position) {
          c = MainActivity.cList[position];
          holder.tv.setText(c.getCommonName().toString());
-         holder.cv.setImageResource(context.getResources().getIdentifier("test.leftie.com.countries:drawable/" + c.getTldCode().substring(1), null, null));
+         holder.cv.setImageResource(context.getResources().getIdentifier("test.leftie.com.countries:drawable/" + c.getLetterCode().toLowerCase().toString(), null, null));
+
 
 
     }
